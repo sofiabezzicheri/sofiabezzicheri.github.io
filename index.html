@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SK! — Occhiali da montagna</title>
+  <meta name="description" content="SK!, gli occhiali da montagna ideati da Sofia Bezzicheri ed Eleonora Nobili.">
+
+  <!-- font: quello di sistema (San Francisco su Mac/iPhone), Inter per gli altri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/sk.css">
+
+  <!-- three.js per i modelli 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+</head>
+<body>
+
+<!-- ===== BARRA DI NAVIGAZIONE ===== -->
+<nav class="barra" aria-label="Principale">
+  <div class="barra-dentro">
+    <a href="#inizio" class="barra-nome">SK!</a>
+    <ul class="barra-link">
+      <li><a href="#esploso">Esploso</a></li>
+      <li><a href="#punti">Caratteristiche</a></li>
+      <li><a href="#lenti">Lenti</a></li>
+      <li><a href="#colori">Colori</a></li>
+      <li><a href="#provali">Provali</a></li>
+      <li><a href="#designer">Designer</a></li>
+    </ul>
+    <div class="barra-azioni">
+      <a href="#acquista" class="pillola pillola-piccola">Acquista</a>
+      <a href="#acquista" class="borsa" aria-label="Borsa, 0 articoli">
+        <svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M1.5 5.5h13l-.8 11h-11.4z"/>
+          <path d="M5 7V4.5a3 3 0 0 1 6 0V7"/>
+        </svg>
+        <span class="borsa-numero" hidden>0</span>
+      </a>
+      <button type="button" class="btn-menu" aria-expanded="false" aria-controls="menu-mobile" aria-label="Apri il menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="menu-mobile" id="menu-mobile" hidden>
+    <ul>
+      <li><a href="#esploso">Esploso</a></li>
+      <li><a href="#punti">Caratteristiche</a></li>
+      <li><a href="#lenti">Lenti</a></li>
+      <li><a href="#colori">Colori</a></li>
+      <li><a href="#provali">Provali</a></li>
+      <li><a href="#designer">Designer</a></li>
+      <li><a href="#acquista">Acquista</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero su-scuro" id="inizio">
+    <div class="contenitore">
+      <p class="occhiello appare">Nuovo</p>
+      <h1 class="hero-nome appare">SK!</h1>
+      <p class="hero-motto appare">La montagna, a fuoco.</p>
+      <p class="hero-autrici appare">Ideato da Sofia Bezzicheri ed Eleonora Nobili.</p>
+      <div class="hero-azioni appare">
+        <a class="pillola" href="#acquista">Acquista</a>
+        <a class="link-freccia" href="#esploso">Scopri di più</a>
+      </div>
+      <p class="hero-prezzo appare">300 € · Spedizione gratuita</p>
+    </div>
+    <div class="vista hero-vista" data-vista="hero" role="img" aria-label="Gli occhiali SK! che ruotano, con la lente specchiata che riflette una montagna innevata">
+      <p class="vista-stato">Caricamento…</p>
+    </div>
+  </section>
+
+  <!-- ===== 2. FRASE ===== -->
+  <section class="frase" aria-label="Il progetto">
+    <div class="contenitore">
+      <p class="frase-testo" data-parole>Una montatura leggera che segue il viso. Una doppia lente che non si appanna. Un elastico che resta dove lo metti. Il resto è *panorama.</p>
+    </div>
+  </section>
+
+  <!-- ===== 3. ESPLOSO (si apre scorrendo la pagina) ===== -->
+  <section class="esploso" id="esploso">
+    <div class="esploso-palco">
+      <div class="esploso-testi">
+        <p class="occhiello">Esploso</p>
+        <h2 class="titolo">Quattro parti.<br>Un solo gesto.</h2>
+        <ol class="esploso-parti">
+          <li><strong>Montatura</strong><span>Leggera e flessibile, si adatta al viso.</span></li>
+          <li><strong>Lente</strong><span>Policarbonato antigraffio, filtro UV400.</span></li>
+          <li><strong>Lente interna</strong><span>La camera d'aria che ferma la condensa.</span></li>
+          <li><strong>Elastico</strong><span>Regolabile, con silicone antiscivolo.</span></li>
+        </ol>
+      </div>
+      <div class="vista esploso-vista" data-vista="esploso" role="img" aria-label="Esploso degli occhiali: montatura, lente, lente interna ed elastico si separano scorrendo la pagina">
+        <p class="vista-stato">Caricamento…</p>
+      </div>
+      <div class="esploso-barra" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ===== 4. PUNTI DI FORZA ===== -->
+  <section class="punti" id="punti">
+    <div class="contenitore-largo">
+      <div class="centrato appare">
+        <p class="occhiello">Caratteristiche</p>
+        <h2 class="titolo">Fatti per l'alta quota.</h2>
+      </div>
+      <div class="riquadri">
+        <div class="riquadro riquadro-largo appare">
+          <p class="riquadro-etichetta">Campo visivo</p>
+          <p class="numero-grande sfumato-caldo">180°</p>
+          <p class="riquadro-testo">Panoramico. <span>Vedi la pista anche con la coda dell'occhio, senza girare la testa.</span></p>
+        </div>
+        <div class="riquadro riquadro-scuro appare">
+          <p class="riquadro-etichetta">Protezione</p>
+          <p class="numero-grande sfumato-freddo">UV400</p>
+          <p class="riquadro-testo">Il 100% dei raggi UV. <span>Anche quando la neve riflette tutto.</span></p>
+        </div>
+        <div class="riquadro riquadro-scuro appare">
+          <p class="riquadro-etichetta">Antiappannamento</p>
+          <p class="numero-grande sfumato-vino">2</p>
+          <p class="riquadro-testo">Lenti, una dentro l'altra. <span>L'aria in mezzo tiene il vetro limpido.</span></p>
+        </div>
+        <div class="riquadro riquadro-largo appare">
+          <p class="riquadro-etichetta">Vestibilità</p>
+          <p class="numero-grande sfumato-caldo">1 taglia</p>
+          <p class="riquadro-testo">Per ogni casco. <span>L'elastico si regola in un attimo e non scivola.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. LENTI ===== -->
+  <section class="lenti" id="lenti">
+    <div class="contenitore centrato appare">
+      <p class="occhiello">Lenti</p>
+      <h2 class="titolo">Una lente per ogni luce.</h2>
+      <p class="sottotitolo">Chiara per la nebbia, fumé per il cielo che cambia, specchiata per il sole sui ghiacciai. In quattro colori, sempre semitrasparenti.</p>
+    </div>
+
+    <div class="vista lenti-vista" data-vista="lenti" role="img" aria-label="Gli occhiali con la lente scelta">
+      <p class="vista-stato">Caricamento…</p>
+    </div>
+    <p class="suggerimento">Trascina per girare gli occhiali</p>
+
+    <div class="contenitore centrato">
+      <div class="comandi">
+        <div class="segmenti" role="radiogroup" aria-label="Tipo di lente">
+          <button type="button" class="segmento" role="radio" data-lente="chiara">Chiara</button>
+          <button type="button" class="segmento" role="radio" data-lente="fume">Fumé</button>
+          <button type="button" class="segmento" role="radio" data-lente="specchiata">Specchiata</button>
+        </div>
+      </div>
+
+      <dl class="lente-dati">
+        <div><dt>Categoria</dt><dd data-mostra="categoria"></dd></div>
+        <div><dt>Luce che passa</dt><dd data-mostra="luce"></dd></div>
+        <div class="dato-testo"><dt>Ideale per</dt><dd data-mostra="ideale"></dd></div>
+      </dl>
+
+      <div class="comandi">
+        <div class="pallini" role="radiogroup" aria-label="Colore della lente">
+          <button type="button" class="pallino pallino-lente" role="radio" data-tinta="bordeaux" style="--colore: #6D1F42;" aria-label="Bordeaux"></button>
+          <button type="button" class="pallino pallino-lente" role="radio" data-tinta="arancio" style="--colore: #EF6F3C;" aria-label="Arancio"></button>
+          <button type="button" class="pallino pallino-lente" role="radio" data-tinta="oliva" style="--colore: #AFAB23;" aria-label="Oliva"></button>
+          <button type="button" class="pallino pallino-lente" role="radio" data-tinta="sabbia" style="--colore: #EFCE7B;" aria-label="Sabbia"></button>
+        </div>
+        <p class="nome-scelta">Lente <span data-mostra="lente"></span> · <span data-mostra="tinta"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. COLORI ===== -->
+  <section class="colori" id="colori">
+    <div class="contenitore centrato appare">
+      <p class="occhiello">Colori</p>
+      <h2 class="titolo">Sei colori.<br>Nessuno passa inosservato.</h2>
+      <p class="sottotitolo">Montatura ed elastico abbinati, per farsi trovare subito anche in mezzo alla neve.</p>
+    </div>
+
+    <div class="vista colori-vista" data-vista="colori" role="img" aria-label="Gli occhiali nel colore scelto">
+      <p class="vista-stato">Caricamento…</p>
+    </div>
+    <p class="suggerimento">Trascina per girare gli occhiali</p>
+
+    <div class="contenitore centrato">
+      <div class="comandi">
+        <div class="pallini" role="radiogroup" aria-label="Colore della montatura">
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="arancio" style="--colore: #EF6F3C; --colore-2: #6D1F42;" aria-label="Arancio"></button>
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="oliva" style="--colore: #AFAB23; --colore-2: #2b2b2e;" aria-label="Oliva"></button>
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="sabbia" style="--colore: #EFCE7B; --colore-2: #EF6F3C;" aria-label="Sabbia"></button>
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="lilla" style="--colore: #D3B6D3; --colore-2: #6D1F42;" aria-label="Lilla"></button>
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="azzurro" style="--colore: #B8CEE8; --colore-2: #2b2b2e;" aria-label="Azzurro"></button>
+          <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="notte" style="--colore: #2b2b2e; --colore-2: #6e6e73;" aria-label="Notte"></button>
+        </div>
+        <p class="nome-scelta" data-mostra="finitura"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. PROVALI CON LA FOTOCAMERA ===== -->
+  <section class="provali su-scuro" id="provali">
+    <div class="contenitore centrato">
+      <div class="appare">
+        <p class="occhiello">Prova virtuale</p>
+        <h2 class="titolo">Provali.<br>Senza uscire di casa.</h2>
+        <p class="sottotitolo">Accendi la fotocamera e indossa SK! in tempo reale: cambi colore e lente mentre ti guardi, poi ti scatti una foto da tenere.</p>
+      </div>
+      <div class="provali-passi appare">
+        <div class="passo"><span class="passo-numero">1</span><p><strong>Accendi la fotocamera.</strong> Le immagini restano sul tuo dispositivo.</p></div>
+        <div class="passo"><span class="passo-numero">2</span><p><strong>Guarda verso lo schermo.</strong> Gli occhiali seguono il tuo viso.</p></div>
+        <div class="passo"><span class="passo-numero">3</span><p><strong>Scatta e scarica.</strong> La foto è pronta da condividere.</p></div>
+      </div>
+      <div class="provali-azioni appare">
+        <button type="button" class="pillola btn-prova">Prova con la fotocamera</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. DESIGNER ===== -->
+  <section class="designer su-scuro" id="designer">
+    <div class="contenitore centrato">
+      <div class="appare">
+        <p class="occhiello">Designer</p>
+        <h2 class="titolo">Ideato da due persone<br>che amano la neve.</h2>
+        <p class="sottotitolo">SK! nasce da un'idea semplice: uno strumento per la montagna può essere anche un oggetto bello da guardare. Ogni parte è stata disegnata, modellata in 3D e ripensata finché non è sembrata inevitabile.</p>
+      </div>
+      <div class="autrici">
+        <div class="autrice appare">
+          <div class="iniziali iniziali-1" aria-hidden="true">SB</div>
+          <h3>Sofia Bezzicheri</h3>
+          <p>Designer</p>
+        </div>
+        <div class="autrice appare">
+          <div class="iniziali iniziali-2" aria-hidden="true">EN</div>
+          <h3>Eleonora Nobili</h3>
+          <p>Designer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. ACQUISTA ===== -->
+  <section class="acquista" id="acquista">
+    <div class="contenitore-largo">
+      <div class="acquista-griglia">
+
+        <div class="acquista-sinistra">
+          <div class="vista acquista-vista" data-vista="acquista" role="img" aria-label="Gli occhiali come li stai configurando">
+            <p class="vista-stato">Caricamento…</p>
+          </div>
+          <p class="suggerimento">Trascina per girare gli occhiali</p>
+        </div>
+
+        <div class="acquista-destra">
+          <h2 class="acquista-titolo">Acquista SK!</h2>
+          <p class="prezzo">300,00 €</p>
+          <p class="rate">oppure 3 rate da 100,00 € a tasso zero.</p>
+          <button type="button" class="link-freccia btn-prova btn-testo">Provali con la fotocamera</button>
+
+          <div class="gruppo">
+            <h3>Colore. <span>Quale ti somiglia?</span></h3>
+            <div class="pallini" role="radiogroup" aria-label="Colore della montatura">
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="arancio" style="--colore: #EF6F3C; --colore-2: #6D1F42;" aria-label="Arancio"></button>
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="oliva" style="--colore: #AFAB23; --colore-2: #2b2b2e;" aria-label="Oliva"></button>
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="sabbia" style="--colore: #EFCE7B; --colore-2: #EF6F3C;" aria-label="Sabbia"></button>
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="lilla" style="--colore: #D3B6D3; --colore-2: #6D1F42;" aria-label="Lilla"></button>
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="azzurro" style="--colore: #B8CEE8; --colore-2: #2b2b2e;" aria-label="Azzurro"></button>
+              <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="notte" style="--colore: #2b2b2e; --colore-2: #6e6e73;" aria-label="Notte"></button>
+            </div>
+            <p class="nome-scelta" data-mostra="finitura"></p>
+          </div>
+
+          <div class="gruppo">
+            <h3>Lente. <span>Per che luce scii?</span></h3>
+            <div class="schede" role="radiogroup" aria-label="Tipo di lente">
+              <button type="button" class="scheda" role="radio" data-lente="chiara">
+                <span><strong>Chiara</strong><span>Nebbia e giornate coperte</span></span>
+                <span class="scheda-extra">S1 · 60%</span>
+              </button>
+              <button type="button" class="scheda" role="radio" data-lente="fume">
+                <span><strong>Fumé</strong><span>Luce che cambia</span></span>
+                <span class="scheda-extra">S2 · 30%</span>
+              </button>
+              <button type="button" class="scheda" role="radio" data-lente="specchiata">
+                <span><strong>Specchiata</strong><span>Sole pieno e ghiacciai</span></span>
+                <span class="scheda-extra">S3 · 12%</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="gruppo">
+            <h3>Colore della lente. <span>Sempre semitrasparente.</span></h3>
+            <div class="pallini" role="radiogroup" aria-label="Colore della lente">
+              <button type="button" class="pallino pallino-lente" role="radio" data-tinta="bordeaux" style="--colore: #6D1F42;" aria-label="Bordeaux"></button>
+              <button type="button" class="pallino pallino-lente" role="radio" data-tinta="arancio" style="--colore: #EF6F3C;" aria-label="Arancio"></button>
+              <button type="button" class="pallino pallino-lente" role="radio" data-tinta="oliva" style="--colore: #AFAB23;" aria-label="Oliva"></button>
+              <button type="button" class="pallino pallino-lente" role="radio" data-tinta="sabbia" style="--colore: #EFCE7B;" aria-label="Sabbia"></button>
+            </div>
+            <p class="nome-scelta" data-mostra="tinta"></p>
+          </div>
+
+          <div class="riepilogo">
+            <p class="riepilogo-riga"><span>SK! <span data-mostra="finitura"></span></span><span>300,00 €</span></p>
+            <p class="riepilogo-riga"><span>Lente <span data-mostra="lente"></span> · <span data-mostra="tinta"></span></span><span>inclusa</span></p>
+            <p class="riepilogo-riga"><span>Custodia rigida</span><span>inclusa</span></p>
+            <p class="riepilogo-riga riepilogo-totale"><span>Totale</span><span>300,00 €</span></p>
+            <button type="button" class="pillola btn-aggiungi">Aggiungi alla borsa</button>
+          </div>
+
+          <ul class="vantaggi">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1.5 5h11v9h-11zM12.5 8h3.5l2.5 3v3h-6z"/><circle cx="5" cy="15" r="1.5"/><circle cx="15" cy="15" r="1.5"/></svg>
+              <span><strong>Spedizione gratuita</strong>Arriva in 2–4 giorni lavorativi.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 8a6 6 0 1 1 1 6"/><path d="M4 3.5V8h4.5"/></svg>
+              <span><strong>Reso gratuito entro 14 giorni</strong>Se non ti convincono, ce li rimandi.</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M10 1.5l7 3v5c0 4.3-3 7.6-7 9-4-1.4-7-4.7-7-9v-5z"/><path d="M6.5 10l2.5 2.5 4.5-5"/></svg>
+              <span><strong>Garanzia di 2 anni</strong>Su montatura, lenti ed elastico.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="piede">
+  <div class="contenitore">
+    <p class="piede-note">SK! è un progetto ideato da Sofia Bezzicheri ed Eleonora Nobili. I dati tecnici delle lenti e le condizioni di vendita sono indicativi.</p>
+    <div class="piede-fondo">
+      <p>Copyright © 2026 SK!. Tutti i diritti riservati.</p>
+      <ul class="piede-link">
+        <li><a href="#esploso">Esploso</a></li>
+        <li><a href="#lenti">Lenti</a></li>
+        <li><a href="#colori">Colori</a></li>
+        <li><a href="#acquista">Acquista</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== finestra della prova con la fotocamera ===== -->
+<div class="prova" role="dialog" aria-modal="true" aria-labelledby="prova-titolo" hidden>
+  <div class="prova-testa">
+    <strong id="prova-titolo">Prova SK!</strong>
+    <button type="button" class="btn-prova-chiudi" aria-label="Chiudi la prova">
+      <svg width="14" height="14" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13"/></svg>
+    </button>
+  </div>
+
+  <div class="prova-schermo">
+    <video class="prova-video" playsinline muted></video>
+    <canvas class="prova-canvas"></canvas>
+    <img class="prova-foto" alt="La tua foto con gli occhiali SK!" hidden>
+    <p class="prova-stato">Avvio della fotocamera…</p>
+  </div>
+
+  <div class="prova-comandi">
+    <div class="prova-scelte">
+      <div class="pallini" role="radiogroup" aria-label="Colore della montatura">
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="arancio" style="--colore: #EF6F3C; --colore-2: #6D1F42;" aria-label="Arancio"></button>
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="oliva" style="--colore: #AFAB23; --colore-2: #2b2b2e;" aria-label="Oliva"></button>
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="sabbia" style="--colore: #EFCE7B; --colore-2: #EF6F3C;" aria-label="Sabbia"></button>
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="lilla" style="--colore: #D3B6D3; --colore-2: #6D1F42;" aria-label="Lilla"></button>
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="azzurro" style="--colore: #B8CEE8; --colore-2: #2b2b2e;" aria-label="Azzurro"></button>
+        <button type="button" class="pallino pallino-finitura" role="radio" data-finitura="notte" style="--colore: #2b2b2e; --colore-2: #6e6e73;" aria-label="Notte"></button>
+      </div>
+      <div class="segmenti" role="radiogroup" aria-label="Tipo di lente">
+        <button type="button" class="segmento" role="radio" data-lente="chiara">Chiara</button>
+        <button type="button" class="segmento" role="radio" data-lente="fume">Fumé</button>
+        <button type="button" class="segmento" role="radio" data-lente="specchiata">Specchiata</button>
+      </div>
+      <div class="pallini" role="radiogroup" aria-label="Colore della lente">
+        <button type="button" class="pallino pallino-lente" role="radio" data-tinta="bordeaux" style="--colore: #6D1F42;" aria-label="Bordeaux"></button>
+        <button type="button" class="pallino pallino-lente" role="radio" data-tinta="arancio" style="--colore: #EF6F3C;" aria-label="Arancio"></button>
+        <button type="button" class="pallino pallino-lente" role="radio" data-tinta="oliva" style="--colore: #AFAB23;" aria-label="Oliva"></button>
+        <button type="button" class="pallino pallino-lente" role="radio" data-tinta="sabbia" style="--colore: #EFCE7B;" aria-label="Sabbia"></button>
+      </div>
+    </div>
+
+    <div class="prova-azioni">
+      <button type="button" class="btn-scatta" aria-label="Scatta una foto" disabled><span></span></button>
+      <a class="pillola btn-scarica" download="sk-prova.png" hidden>Scarica la foto</a>
+      <button type="button" class="pillola pillola-grigia btn-riprova" hidden>Scatta di nuovo</button>
+    </div>
+  </div>
+</div>
+
+<div class="avviso" role="status" aria-live="polite"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    function limita(x, min, max) { return Math.max(min, Math.min(max, x)); }
+    function morbido(k) { return k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; }
+    const fermo = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // ===== menu mobile =====
+    const btnMenu = document.querySelector('.btn-menu');
+    const menuMobile = document.getElementById('menu-mobile');
+    function apriMenu(aperto) {
+        btnMenu.setAttribute('aria-expanded', aperto);
+        btnMenu.setAttribute('aria-label', aperto ? 'Chiudi il menu' : 'Apri il menu');
+        menuMobile.hidden = !aperto;
+        document.body.classList.toggle('senza-scorrimento', aperto);
+    }
+    btnMenu.addEventListener('click', function () { apriMenu(menuMobile.hidden); });
+    menuMobile.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { apriMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menuMobile.hidden) apriMenu(false);
+    });
+
+    // ===== i testi compaiono quando entrano nello schermo =====
+    const daMostrare = document.querySelectorAll('.appare');
+    if ('IntersectionObserver' in window) {
+        const osservaComparsa = new IntersectionObserver(function (voci) {
+            voci.forEach(function (v) {
+                if (v.isIntersecting) {
+                    v.target.classList.add('visibile');
+                    osservaComparsa.unobserve(v.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        daMostrare.forEach(function (el) { osservaComparsa.observe(el); });
+    } else {
+        daMostrare.forEach(function (el) { el.classList.add('visibile'); });
+    }
+
+    // ===== la frase si accende parola per parola scorrendo =====
+    // (una parola che inizia con * diventa arancione)
+    const frase = document.querySelector('[data-parole]');
+    const parole = [];
+    if (frase) {
+        const testo = frase.textContent.trim().split(/\s+/);
+        frase.textContent = '';
+        testo.forEach(function (p, i) {
+            const s = document.createElement('span');
+            if (p.charAt(0) === '*') { p = p.slice(1); s.classList.add('colore'); }
+            s.textContent = p;
+            frase.appendChild(s);
+            if (i < testo.length - 1) frase.appendChild(document.createTextNode(' '));
+            parole.push(s);
+        });
+    }
+    function aggiornaFrase() {
+        if (!parole.length) return;
+        const r = frase.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const p = limita((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0, 1);
+        const accese = Math.round(p * parole.length);
+        parole.forEach(function (s, i) { s.classList.toggle('accesa', i < accese); });
+    }
+
+    // ===== avanzamento dell'esploso (0 → 1 mentre si scorre la sezione) =====
+    const sezEsploso = document.getElementById('esploso');
+    const vociEsploso = sezEsploso.querySelectorAll('.esploso-parti li');
+    const barraEsploso = sezEsploso.querySelector('.esploso-barra span');
+    let progressoEsploso = 0;
+    function aggiornaEsploso() {
+        const r = sezEsploso.getBoundingClientRect();
+        const corsa = r.height - window.innerHeight;
+        progressoEsploso = corsa > 0 ? limita(-r.top / corsa, 0, 1) : 0;
+        // le parti si accendono una alla volta, dopo che gli occhiali si sono aperti
+        const attiva = progressoEsploso < 0.3 ? -1 : Math.min(3, Math.floor((progressoEsploso - 0.3) / 0.65 * 4));
+        vociEsploso.forEach(function (li, i) { li.classList.toggle('attiva', i === attiva); });
+        barraEsploso.style.width = (progressoEsploso * 100) + '%';
+    }
+
+    function alloScorrimento() { aggiornaFrase(); aggiornaEsploso(); }
+    window.addEventListener('scroll', alloScorrimento, { passive: true });
+    window.addEventListener('resize', alloScorrimento);
+    alloScorrimento();
+
+    // ===== LE SCELTE (colore, lente, colore della lente) =====
+    // Ogni bottone con data-finitura / data-lente / data-tinta, in qualsiasi sezione,
+    // cambia la stessa scelta: così Lenti, Colori e Acquista restano sempre allineati.
+    const FINITURE = {
+        arancio: { nome: 'Arancio', montatura: '#EF6F3C', elastico: '#6D1F42', interno: '#EFCE7B' },
+        oliva:   { nome: 'Oliva',   montatura: '#AFAB23', elastico: '#2b2b2e', interno: '#EFCE7B' },
+        sabbia:  { nome: 'Sabbia',  montatura: '#EFCE7B', elastico: '#EF6F3C', interno: '#6D1F42' },
+        lilla:   { nome: 'Lilla',   montatura: '#D3B6D3', elastico: '#6D1F42', interno: '#EFCE7B' },
+        azzurro: { nome: 'Azzurro', montatura: '#B8CEE8', elastico: '#2b2b2e', interno: '#EFCE7B' },
+        notte:   { nome: 'Notte',   montatura: '#2b2b2e', elastico: '#6e6e73', interno: '#6e6e73' }
+    };
+    // opacita: quanto è coprente; scuro: quanto si scurisce il colore; monte: riflesso della montagna
+    const LENTI = {
+        chiara:     { nome: 'Chiara',     categoria: 'S1', luce: '60%', ideale: 'Nebbia, neve fresca e giornate coperte', opacita: 0.35, metallo: 0,    ruvidita: 0.06, scuro: 0,    monte: false },
+        fume:       { nome: 'Fumé',       categoria: 'S2', luce: '30%', ideale: 'Cielo che cambia e mezze stagioni',       opacita: 0.7,  metallo: 0.2,  ruvidita: 0.05, scuro: 0.45, monte: false },
+        specchiata: { nome: 'Specchiata', categoria: 'S3', luce: '12%', ideale: 'Sole pieno, ghiacciai e alta quota',      opacita: 0.85, metallo: 0.85, ruvidita: 0.04, scuro: 0,    monte: true }
+    };
+    const TINTE = {
+        bordeaux: { nome: 'Bordeaux', colore: '#6D1F42' },
+        arancio:  { nome: 'Arancio',  colore: '#EF6F3C' },
+        oliva:    { nome: 'Oliva',    colore: '#AFAB23' },
+        sabbia:   { nome: 'Sabbia',   colore: '#EFCE7B' }
+    };
+    const scelta = { finitura: 'arancio', lente: 'specchiata', tinta: 'bordeaux' };
+
+    const viste = [];   // i riquadri 3D creati
+
+    function aggiornaScelte() {
+        [['finitura', '[data-finitura]'], ['lente', '[data-lente]'], ['tinta', '[data-tinta]']].forEach(function (c) {
+            document.querySelectorAll(c[1]).forEach(function (b) {
+                const acceso = b.getAttribute('data-' + c[0]) === scelta[c[0]];
+                b.classList.toggle('selected', acceso);
+                b.setAttribute('aria-checked', acceso ? 'true' : 'false');
+            });
+        });
+        const L = LENTI[scelta.lente];
+        const testi = {
+            finitura: FINITURE[scelta.finitura].nome,
+            lente: L.nome,
+            tinta: TINTE[scelta.tinta].nome,
+            categoria: L.categoria,
+            luce: L.luce,
+            ideale: L.ideale
+        };
+        document.querySelectorAll('[data-mostra]').forEach(function (el) {
+            el.textContent = testi[el.getAttribute('data-mostra')];
+        });
+        viste.forEach(function (v) { if (v.segueScelta) v.applica(scelta); });
+    }
+
+    document.addEventListener('click', function (e) {
+        const b = e.target.closest('[data-finitura], [data-lente], [data-tinta]');
+        if (!b) return;
+        if (b.hasAttribute('data-finitura')) scelta.finitura = b.getAttribute('data-finitura');
+        if (b.hasAttribute('data-lente')) scelta.lente = b.getAttribute('data-lente');
+        if (b.hasAttribute('data-tinta')) scelta.tinta = b.getAttribute('data-tinta');
+        aggiornaScelte();
+    });
+    aggiornaScelte();
+
+    // ===== borsa =====
+    const borsa = document.querySelector('.borsa');
+    const numeroBorsa = borsa.querySelector('.borsa-numero');
+    const avviso = document.querySelector('.avviso');
+    let nellaBorsa = 0;
+    try { nellaBorsa = parseInt(localStorage.getItem('sk-borsa') || '0', 10) || 0; } catch (err) { nellaBorsa = 0; }
+    function mostraBorsa() {
+        numeroBorsa.textContent = nellaBorsa;
+        numeroBorsa.hidden = nellaBorsa === 0;
+        borsa.setAttribute('aria-label', 'Borsa, ' + nellaBorsa + (nellaBorsa === 1 ? ' articolo' : ' articoli'));
+    }
+    mostraBorsa();
+    let timerAvviso = null;
+    document.querySelector('.btn-aggiungi').addEventListener('click', function () {
+        nellaBorsa++;
+        try { localStorage.setItem('sk-borsa', String(nellaBorsa)); } catch (err) { /* niente memoria: pazienza */ }
+        mostraBorsa();
+        avviso.textContent = 'SK! ' + FINITURE[scelta.finitura].nome + ', lente ' + LENTI[scelta.lente].nome +
+            ' ' + TINTE[scelta.tinta].nome + ' — aggiunti alla borsa.';
+        avviso.classList.add('visibile');
+        clearTimeout(timerAvviso);
+        timerAvviso = setTimeout(function () { avviso.classList.remove('visibile'); }, 3200);
+    });
+
+    // ================================================================
+    // ===== 3D =====
+    // ================================================================
+    const stati = document.querySelectorAll('.vista-stato');
+    if (typeof THREE === 'undefined' || typeof THREE.GLTFLoader === 'undefined') {
+        stati.forEach(function (p) { p.textContent = 'Il 3D non è disponibile.'; });
+        return;
+    }
+
+    const FILE = 'models/SofiaBezzicheri.glb';
+    // le parti, riconosciute dal materiale, e dove vanno nell'esploso (gli occhiali guardano verso +z)
+    const PARTI = {
+        'Plastica':     { ruolo: 'montatura', spostamento: [0, 0, 0] },
+        'Plastica (1)': { ruolo: 'lente',     spostamento: [0, 0.15, 1.1] },
+        'Plastica (4)': { ruolo: 'interno',   spostamento: [0, 0.05, 0.55] },
+        'Plastica (3)': { ruolo: 'elastico',  spostamento: [0, -0.15, -1.0] }
+    };
+
+    function lineare(hex) { return new THREE.Color(hex).convertSRGBToLinear(); }
+
+    // ---- il panorama innevato che si riflette nella lente specchiata (disegnato una volta sola) ----
+    let telaMonte = null;
+    function disegnaMonte() {
+        if (telaMonte) return telaMonte;
+        const L = 2048, H = 1024, orizzonte = H * 0.52;
+        const tela = document.createElement('canvas');
+        tela.width = L; tela.height = H;
+        const ctx = tela.getContext('2d');
+
+        const cielo = ctx.createLinearGradient(0, 0, 0, orizzonte);
+        cielo.addColorStop(0, '#2f5f9e');
+        cielo.addColorStop(0.6, '#8fb8e0');
+        cielo.addColorStop(1, '#e8f1f8');
+        ctx.fillStyle = cielo;
+        ctx.fillRect(0, 0, L, orizzonte);
+
+        const sole = ctx.createRadialGradient(L * 0.3, H * 0.3, 0, L * 0.3, H * 0.3, 160);
+        sole.addColorStop(0, 'rgba(255,255,255,1)');
+        sole.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = sole;
+        ctx.fillRect(0, 0, L, orizzonte);
+
+        const valle = ctx.createLinearGradient(0, orizzonte, 0, H);
+        valle.addColorStop(0, '#5d6f80');
+        valle.addColorStop(1, '#1d2630');
+        ctx.fillStyle = valle;
+        ctx.fillRect(0, orizzonte, L, H - orizzonte);
+
+        function profilo(x, onde) {
+            let y = 0;
+            onde.forEach(function (o) { y += o[0] * Math.sin((x / L) * Math.PI * 2 * o[1] + o[2]); });
+            return y;
+        }
+        function catena(base, altezza, onde, roccia, neve, limiteNeve) {
+            ctx.beginPath();
+            ctx.moveTo(0, orizzonte + 40);
+            for (let x = 0; x <= L; x += 4) ctx.lineTo(x, base - altezza * Math.abs(profilo(x, onde)));
+            ctx.lineTo(L, orizzonte + 40);
+            ctx.closePath();
+            ctx.fillStyle = roccia;
+            ctx.fill();
+            ctx.save();
+            ctx.clip();
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            for (let x = 0; x <= L; x += 4) ctx.lineTo(x, limiteNeve + 10 * Math.sin(x * 0.09) + 6 * Math.sin(x * 0.23));
+            ctx.lineTo(L, 0);
+            ctx.closePath();
+            ctx.fillStyle = neve;
+            ctx.fill();
+            ctx.restore();
+        }
+        catena(orizzonte + 10, 300, [[0.6, 3, 0.4], [0.3, 7, 1.3], [0.15, 17, 2.1]], '#7d8ea3', '#f4f8fc', orizzonte - 150);
+        catena(orizzonte + 30, 230, [[0.55, 2, 2.2], [0.35, 5, 0.2], [0.12, 13, 1.7]], '#3e4a59', '#ffffff', orizzonte - 105);
+
+        telaMonte = tela;
+        return tela;
+    }
+
+    // ---- come si comporta ogni riquadro ----
+    // fisso: scelta che non cambia (hero ed esploso); senza fisso segue i bottoni
+    const TIPI = {
+        hero:     { fisso: { finitura: 'arancio', lente: 'specchiata', tinta: 'bordeaux' }, frazione: 0.5,  giro: 'completo' },
+        esploso:  { fisso: { finitura: 'arancio', lente: 'chiara', tinta: 'bordeaux' },     frazione: 0.85, giro: 'scorrimento' },
+        lenti:    { frazione: 0.6,  giro: 'dondolo' },
+        colori:   { frazione: 0.6,  giro: 'dondolo' },
+        acquista: { frazione: 0.72, giro: 'dondolo' }
+    };
+
+    let modelloBase = null;
+    let erroreModello = false;
+    const inAttesa = [];
+
+    new THREE.GLTFLoader().load(FILE, function (gltf) {
+        const m = gltf.scene;
+        // centra e porta la misura più grande a 2 unità
+        const box = new THREE.Box3().setFromObject(m);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        const fattore = 2 / Math.max(size.x, size.y, size.z);
+        m.scale.setScalar(fattore);
+        m.position.copy(center).multiplyScalar(-fattore);
+        m.userData.fattore = fattore;
+        modelloBase = m;
+        inAttesa.splice(0).forEach(function (el) { creaVista(el); });
+    }, undefined, function (err) {
+        console.error('Errore nel caricamento di ' + FILE, err);
+        erroreModello = true;
+        stati.forEach(function (p) { p.textContent = 'Impossibile caricare il modello 3D.'; });
+    });
+
+    // Dà a una copia del modello i suoi materiali, divisi per parte.
+    // Restituisce applica(scelta) per colorarla e i pezzi per l'esploso.
+    function vesti(modello, monte) {
+        const copie = new Map();
+        const materiali = { montatura: [], lente: [], interno: [], elastico: [] };
+        const pezzi = [];
+        modello.traverse(function (o) {
+            if (!o.isMesh) return;
+            if (!copie.has(o.material)) {
+                const m = o.material.clone();
+                const parte = PARTI[m.name];
+                if (parte) materiali[parte.ruolo].push(m);
+                if (parte && parte.ruolo === 'lente') {
+                    m.transparent = true;
+                    m.depthWrite = false;
+                    m.side = THREE.DoubleSide;
+                    m.transmission = 0;
+                }
+                copie.set(o.material, m);
+            }
+            o.material = copie.get(o.material);
+            const parte = PARTI[o.material.name];
+            if (parte && parte.ruolo === 'lente') o.renderOrder = 2;
+            pezzi.push({ mesh: o, base: o.position.clone(), spostamento: parte ? parte.spostamento : [0, 0, 0] });
+        });
+
+        function applica(s) {
+            const F = FINITURE[s.finitura], L = LENTI[s.lente], T = TINTE[s.tinta];
+            materiali.montatura.forEach(function (m) { m.color.copy(lineare(F.montatura)); });
+            materiali.elastico.forEach(function (m) { m.color.copy(lineare(F.elastico)); });
+            materiali.interno.forEach(function (m) { m.color.copy(lineare(F.interno)); });
+            materiali.lente.forEach(function (m) {
+                const c = lineare(T.colore);
+                if (L.scuro) c.lerp(new THREE.Color(0, 0, 0), L.scuro);
+                m.color.copy(c);
+                m.opacity = L.opacita;
+                m.metalness = L.metallo;
+                m.roughness = L.ruvidita;
+                m.clearcoat = 1;
+                m.envMap = L.monte ? monte : null;
+                m.envMapIntensity = L.monte ? 1.6 : 1;
+                m.needsUpdate = true;
+            });
+        }
+        return { applica: applica, pezzi: pezzi };
+    }
+
+    // l'ambiente (luce morbida + panorama del monte) per un renderer
+    function ambiente(renderer, scene) {
+        const pmrem = new THREE.PMREMGenerator(renderer);
+        scene.environment = pmrem.fromScene(new THREE.RoomEnvironment(), 0.04).texture;
+        const texMonte = new THREE.CanvasTexture(disegnaMonte());
+        texMonte.encoding = THREE.sRGBEncoding;
+        texMonte.mapping = THREE.EquirectangularReflectionMapping;
+        const monte = pmrem.fromEquirectangular(texMonte).texture;
+        texMonte.dispose();
+        pmrem.dispose();
+        const luce = new THREE.DirectionalLight(0xffffff, 0.8);
+        luce.position.set(3, 5, 6);
+        scene.add(luce);
+        const taglio = new THREE.DirectionalLight(0xffffff, 0.6);   // luce da dietro: disegna i bordi
+        taglio.position.set(-4, 2, -5);
+        scene.add(taglio);
+        return monte;
+    }
+
+    function creaVista(el) {
+        const tipo = TIPI[el.getAttribute('data-vista')];
+        const v = { el: el, visibile: true, segueScelta: !tipo.fisso, utente: 0 };
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.05;
+        renderer.setClearColor(0x000000, 0);
+        el.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene();
+        const monte = ambiente(renderer, scene);
+
+        const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+        const perno = new THREE.Group();
+        scene.add(perno);
+        const modello = modelloBase.clone(true);
+        perno.add(modello);
+        const fattore = modelloBase.userData.fattore;
+
+        const vestito = vesti(modello, monte);
+        const pezzi = vestito.pezzi;
+        v.applica = vestito.applica;
+        v.applica(tipo.fisso || scelta);
+
+        // sposta le parti: k = 0 unito, k = 1 esploso
+        let ultimoK = -1;
+        function esplodi(k) {
+            if (k === ultimoK) return;
+            ultimoK = k;
+            pezzi.forEach(function (p) {
+                p.mesh.position.set(
+                    p.base.x + p.spostamento[0] * k / fattore,
+                    p.base.y + p.spostamento[1] * k / fattore,
+                    p.base.z + p.spostamento[2] * k / fattore
+                );
+            });
+        }
+
+        // distanza della camera: gli occhiali occupano circa "frazione" della larghezza
+        const misura = new THREE.Box3().setFromObject(modello).getSize(new THREE.Vector3());
+        let distanza = 6;
+        v.adatta = function () {
+            const w = el.clientWidth, h = el.clientHeight;
+            if (!w || !h) return;
+            renderer.setSize(w, h, false);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+            let larghezza = misura.x, altezza = misura.y, profondita = misura.z;
+            if (tipo.giro === 'completo') larghezza = Math.max(misura.x, misura.z);
+            if (tipo.giro === 'scorrimento') {
+                profondita = misura.z + 2.1;                         // lente avanti, elastico indietro
+                larghezza = Math.hypot(misura.x, profondita) * 0.9;  // visti di tre quarti
+                altezza = misura.y + 0.4;
+            }
+            distanza = Math.max(
+                (larghezza / 2) / (t * camera.aspect * tipo.frazione),
+                (altezza / 2) / (t * 0.8)
+            ) + profondita / 2;
+        };
+        v.adatta();
+
+        // trascinare per girare gli occhiali (non nell'esploso, che segue lo scorrimento)
+        if (tipo.giro !== 'scorrimento') {
+            let xPrima = null;
+            el.addEventListener('pointerdown', function (e) {
+                xPrima = e.clientX;
+                el.setPointerCapture(e.pointerId);
+            });
+            el.addEventListener('pointermove', function (e) {
+                if (xPrima === null) return;
+                v.utente += (e.clientX - xPrima) * 0.008;
+                xPrima = e.clientX;
+            });
+            function lascia() { xPrima = null; }
+            el.addEventListener('pointerup', lascia);
+            el.addEventListener('pointercancel', lascia);
+        }
+
+        v.disegna = function (ora) {
+            const calmo = fermo.matches;
+            if (tipo.giro === 'completo') {
+                perno.rotation.y = (calmo ? 0.5 : (ora / 14000) * Math.PI * 2) + v.utente;
+                perno.position.y = calmo ? 0 : Math.sin(ora / 2200) * 0.04;
+                camera.position.set(0, distanza * 0.12, distanza);
+                camera.lookAt(0, 0, 0);
+            } else if (tipo.giro === 'dondolo') {
+                perno.rotation.y = 0.35 + (calmo ? 0 : Math.sin(ora / 3200) * 0.4) + v.utente;
+                camera.position.set(0, distanza * 0.1, distanza);
+                camera.lookAt(0, 0, 0);
+            } else {
+                // esploso: si apre nella prima metà, la camera gira piano per tutta la sezione
+                const p = progressoEsploso;
+                esplodi(morbido(limita((p - 0.05) / 0.45, 0, 1)));
+                camera.position.setFromSphericalCoords(distanza, 1.22, 0.35 + p * 0.75);
+                camera.lookAt(0, 0, 0);
+            }
+            renderer.render(scene, camera);
+        };
+
+        const stato = el.querySelector('.vista-stato');
+        if (stato) stato.hidden = true;
+
+        viste.push(v);
+        // il riquadro disegna solo quando è sullo schermo
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (voci) { v.visibile = voci[0].isIntersecting; }).observe(el);
+        }
+    }
+
+    // i riquadri si creano quando stanno per entrare nello schermo (così la pagina parte leggera)
+    const elementiVista = document.querySelectorAll('.vista[data-vista]');
+    function prepara(el) {
+        if (erroreModello) return;
+        if (modelloBase) creaVista(el);
+        else inAttesa.push(el);
+    }
+    if ('IntersectionObserver' in window) {
+        const osservaVicino = new IntersectionObserver(function (voci) {
+            voci.forEach(function (v) {
+                if (!v.isIntersecting) return;
+                osservaVicino.unobserve(v.target);
+                prepara(v.target);
+            });
+        }, { rootMargin: '600px 0px' });
+        elementiVista.forEach(function (el) { osservaVicino.observe(el); });
+    } else {
+        elementiVista.forEach(prepara);
+    }
+
+    window.addEventListener('resize', function () {
+        viste.forEach(function (v) { v.adatta(); });
+    });
+
+    // ================================================================
+    // ===== PROVA CON LA FOTOCAMERA =====
+    // ================================================================
+    const prova = document.querySelector('.prova');
+    const video = prova.querySelector('.prova-video');
+    const canvasProva = prova.querySelector('.prova-canvas');
+    const foto = prova.querySelector('.prova-foto');
+    const statoProva = prova.querySelector('.prova-stato');
+    const btnScatta = prova.querySelector('.btn-scatta');
+    const btnScarica = prova.querySelector('.btn-scarica');
+    const btnRiprova = prova.querySelector('.btn-riprova');
+    const btnChiudi = prova.querySelector('.btn-prova-chiudi');
+
+    const MEDIAPIPE = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14';
+    const MODELLO_VOLTO = 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task';
+
+    let flusso = null;          // la fotocamera
+    let riconoscitore = null;   // MediaPipe FaceLandmarker
+    let rendererProva = null, sceneProva = null, cameraProva = null, occhialiProva = null, testa = null;
+    let inProva = false, ultimoTempoVideo = -1, voltoVisto = false, apertoDa = null;
+
+    document.querySelectorAll('.btn-prova').forEach(function (b) {
+        b.addEventListener('click', function () { apertoDa = b; apriProva(); });
+    });
+    btnChiudi.addEventListener('click', chiudiProva);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && inProva) chiudiProva(); });
+
+    function scrivi(testo) {
+        statoProva.hidden = !testo;
+        statoProva.textContent = testo || '';
+    }
+
+    async function apriProva() {
+        prova.hidden = false;
+        document.body.classList.add('senza-scorrimento');
+        btnChiudi.focus();
+        mostraFoto(false);
+        btnScatta.disabled = true;
+        inProva = true;
+        scrivi('Avvio della fotocamera…');
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            scrivi('Questo browser non permette di usare la fotocamera (serve una pagina https o localhost).');
+            return;
+        }
+        try {
+            flusso = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
+        } catch (err) {
+            console.error(err);
+            scrivi('Non è stato possibile usare la fotocamera. Controlla di aver dato il permesso al browser.');
+            return;
+        }
+        if (!inProva) { fermaFotocamera(); return; }
+        video.srcObject = flusso;
+        await video.play();
+        prova.querySelector('.prova-schermo').style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+
+        scrivi('Caricamento degli occhiali…');
+        await modelloPronto();
+        if (!inProva) return;
+        if (!modelloBase) { scrivi('Impossibile caricare il modello 3D.'); return; }
+        preparaScenaProva();
+
+        scrivi('Caricamento del riconoscimento del volto…');
+        try {
+            if (!riconoscitore) riconoscitore = await creaRiconoscitore();
+        } catch (err) {
+            console.error(err);
+            scrivi('Non è stato possibile caricare il riconoscimento del volto (serve la connessione a internet).');
+            return;
+        }
+        if (!inProva) return;
+        scrivi('Guarda verso la fotocamera');
+        btnScatta.disabled = false;
+        requestAnimationFrame(cicloProva);
+    }
+
+    // aspetta che il modello degli occhiali sia caricato (o che sia fallito)
+    function modelloPronto() {
+        return new Promise(function (fatto) {
+            (function controlla() {
+                if (modelloBase || erroreModello) fatto();
+                else setTimeout(controlla, 150);
+            })();
+        });
+    }
+
+    async function creaRiconoscitore() {
+        const vision = await import(MEDIAPIPE + '/vision_bundle.mjs');
+        const fileset = await vision.FilesetResolver.forVisionTasks(MEDIAPIPE + '/wasm');
+        const opzioni = function (delegate) {
+            return {
+                baseOptions: { modelAssetPath: MODELLO_VOLTO, delegate: delegate },
+                runningMode: 'VIDEO',
+                numFaces: 1,
+                outputFacialTransformationMatrixes: true
+            };
+        };
+        try {
+            return await vision.FaceLandmarker.createFromOptions(fileset, opzioni('GPU'));
+        } catch (e) {
+            return await vision.FaceLandmarker.createFromOptions(fileset, opzioni('CPU'));
+        }
+    }
+
+    // Una scena in pixel del video: gli occhiali (con le scelte del sito)
+    // e una "testa" invisibile che nasconde l'elastico dietro il viso
+    function preparaScenaProva() {
+        const w = video.videoWidth, h = video.videoHeight;
+        if (!rendererProva) {
+            rendererProva = new THREE.WebGLRenderer({ canvas: canvasProva, antialias: true, alpha: true, preserveDrawingBuffer: true });
+            rendererProva.outputEncoding = THREE.sRGBEncoding;
+            rendererProva.toneMapping = THREE.ACESFilmicToneMapping;
+            rendererProva.toneMappingExposure = 1.05;
+            rendererProva.setClearColor(0x000000, 0);
+            sceneProva = new THREE.Scene();
+            const monte = ambiente(rendererProva, sceneProva);
+
+            const copia = modelloBase.clone(true);
+            const vestito = vesti(copia, monte);
+            vestito.applica(scelta);
+            // gli occhiali seguono i bottoni come gli altri riquadri (ma non hanno un riquadro da disegnare)
+            viste.push({ segueScelta: true, visibile: false, applica: vestito.applica, adatta: function () {}, disegna: function () {} });
+
+            // misure prese da montatura e lente (non dall'elastico): centro sul ponte, fronte a z = 0, larghi 1
+            copia.updateMatrixWorld(true);
+            const box = new THREE.Box3();
+            copia.traverse(function (o) {
+                if (o.isMesh && (o.material.name === 'Plastica' || o.material.name === 'Plastica (1)')) box.expandByObject(o);
+            });
+            if (box.isEmpty()) box.setFromObject(copia);
+            const size = box.getSize(new THREE.Vector3());
+            const interno = new THREE.Group();
+            interno.add(copia);
+            copia.position.sub(new THREE.Vector3((box.min.x + box.max.x) / 2, (box.min.y + box.max.y) / 2, box.max.z));
+            interno.scale.setScalar(1 / size.x);
+            occhialiProva = new THREE.Group();
+            occhialiProva.add(interno);
+            occhialiProva.visible = false;
+            sceneProva.add(occhialiProva);
+
+            const maschera = new THREE.MeshBasicMaterial({ colorWrite: false });
+            testa = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 24), maschera);
+            testa.renderOrder = -1;
+            testa.visible = false;
+            sceneProva.add(testa);
+        }
+        rendererProva.setPixelRatio(1);
+        rendererProva.setSize(w, h, false);
+        cameraProva = new THREE.OrthographicCamera(-w / 2, w / 2, h / 2, -h / 2, -10000, 10000);
+    }
+
+    function cicloProva() {
+        if (!inProva || !riconoscitore) return;
+        requestAnimationFrame(cicloProva);
+        if (!foto.hidden) return;   // c'è una foto: si aspetta "Scatta di nuovo"
+        if (video.readyState < 2) return;
+        if (video.currentTime !== ultimoTempoVideo) {
+            ultimoTempoVideo = video.currentTime;
+            posizionaOcchiali(riconoscitore.detectForVideo(video, performance.now()));
+        }
+        rendererProva.render(sceneProva, cameraProva);
+    }
+
+    const avanti = new THREE.Vector3();
+    function posizionaOcchiali(risultato) {
+        const punti = risultato && risultato.faceLandmarks && risultato.faceLandmarks[0];
+        if (!punti) {
+            occhialiProva.visible = testa.visible = false;
+            if (voltoVisto) scrivi('Non vedo il volto: guarda verso la fotocamera');
+            return;
+        }
+        voltoVisto = true;
+        scrivi('');
+        const w = video.videoWidth, h = video.videoHeight;
+        // punto del volto → pixel della scena (y in alto, z verso la fotocamera)
+        function P(i) { const p = punti[i]; return new THREE.Vector3((p.x - 0.5) * w, (0.5 - p.y) * h, -p.z * w); }
+
+        const occhioSx = P(33), occhioDx = P(263);
+        const centro = occhioSx.clone().add(occhioDx).multiplyScalar(0.5);
+        const larghezzaViso = P(127).distanceTo(P(356));
+
+        // rotazione della testa: dalla matrice di MediaPipe, se c'è; se no solo l'inclinazione degli occhi
+        const q = new THREE.Quaternion();
+        const matrici = risultato.facialTransformationMatrixes;
+        if (matrici && matrici[0]) {
+            new THREE.Matrix4().fromArray(matrici[0].data).decompose(new THREE.Vector3(), q, new THREE.Vector3());
+        } else {
+            q.setFromAxisAngle(new THREE.Vector3(0, 0, 1), Math.atan2(occhioDx.y - occhioSx.y, occhioDx.x - occhioSx.x));
+        }
+        avanti.set(0, 0, 1).applyQuaternion(q);
+
+        // una maschera da neve è un po' più larga del viso e sta più in avanti
+        const larghezza = larghezzaViso * 1.1;
+        occhialiProva.quaternion.copy(q);
+        occhialiProva.scale.setScalar(larghezza);
+        occhialiProva.position.copy(centro).addScaledVector(avanti, larghezza * 0.15);
+        occhialiProva.visible = true;
+
+        // la testa invisibile: un ovale dietro gli occhi
+        testa.quaternion.copy(q);
+        testa.scale.set(larghezzaViso * 0.5, larghezzaViso * 0.72, larghezzaViso * 0.58);
+        testa.position.copy(centro).addScaledVector(avanti, -larghezzaViso * 0.55);
+        testa.visible = true;
+    }
+
+    // Foto: video e occhiali specchiati, come li vedi sullo schermo
+    btnScatta.addEventListener('click', function () {
+        const w = video.videoWidth, h = video.videoHeight;
+        const tela = document.createElement('canvas');
+        tela.width = w; tela.height = h;
+        const ctx = tela.getContext('2d');
+        ctx.translate(w, 0);
+        ctx.scale(-1, 1);
+        ctx.drawImage(video, 0, 0, w, h);
+        rendererProva.render(sceneProva, cameraProva);
+        ctx.drawImage(canvasProva, 0, 0, w, h);
+        // la firma SK! in basso (scritta dritta, non specchiata)
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.font = '700 ' + Math.round(h * 0.05) + 'px -apple-system, "Inter", Helvetica, Arial, sans-serif';
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('SK!', Math.round(h * 0.04), h - Math.round(h * 0.04));
+        const dati = tela.toDataURL('image/png');
+        foto.src = dati;
+        btnScarica.href = dati;
+        mostraFoto(true);
+    });
+    btnRiprova.addEventListener('click', function () { mostraFoto(false); });
+
+    function mostraFoto(si) {
+        foto.hidden = !si;
+        btnScarica.hidden = !si;
+        btnRiprova.hidden = !si;
+        btnScatta.hidden = si;
+    }
+
+    function fermaFotocamera() {
+        if (flusso) flusso.getTracks().forEach(function (t) { t.stop(); });
+        flusso = null;
+        video.srcObject = null;
+    }
+
+    function chiudiProva() {
+        inProva = false;
+        voltoVisto = false;
+        fermaFotocamera();
+        prova.hidden = true;
+        document.body.classList.remove('senza-scorrimento');
+        if (apertoDa) apertoDa.focus();
+    }
+
+    function ciclo(ora) {
+        requestAnimationFrame(ciclo);
+        viste.forEach(function (v) { if (v.visibile) v.disegna(ora); });
+    }
+    requestAnimationFrame(ciclo);
+});
+</script>
+
+</body>
+</html>
